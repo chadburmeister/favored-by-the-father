@@ -13,6 +13,7 @@ CDN = "https://images.squarespace-cdn.com/content/v1/65faf99814900055181908ab"
 IMG = {
     "logo": f"{CDN}/5c16df6c-f5f4-43f4-be13-173ed06b6ec8/logo.png?format=300w",
     "portrait": f"{CDN}/c40c6d1f-fc49-4ebd-afc0-bb3ebcc950c0/2026.02.01.jpg?format=1000w",
+    "portrait_hat": "/PastorBrehon.jpeg",
     "hero_legacy": f"{CDN}/df7d89e0-4701-4433-a3b9-86415be84692/_Website+Homepage2e.png?format=1200w",
     "butterfly": f"{CDN}/4ff37526-3877-42b2-b292-79487046e568/Butterfly.jpg?format=800w",
     "music": f"{CDN}/0de7e1e1-362d-4af9-8e61-50af485c7f3d/Website+Music+Inspired+by+Ministry.png?format=800w",
@@ -249,6 +250,6 @@ page(filename="contact.html", canonical="/contact",
      body=contact_body.format(**ctx))
 
 # Copy static assets into the output directory
-for static in ("styles.css", "main.js", "404.html", "robots.txt", "sitemap.xml"):
+for static in ("styles.css", "main.js", "404.html", "robots.txt", "sitemap.xml", "PastorBrehon.jpeg"):
     shutil.copy(ROOT / static, OUT / static)
 print("done — output in public/")

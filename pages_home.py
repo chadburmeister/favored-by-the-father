@@ -13,7 +13,7 @@ BODY = """
       <p class="hero-verse">"Grow in the grace and knowledge of our Lord and Savior Jesus Christ." <br><strong>— 2 Peter 3:18 NLT</strong></p>
     </div>
     <div class="hero-portrait reveal">
-      <img src="{IMG[portrait]}" alt="Rev. Dr. Barbara A. F. Brehon" width="1000" height="800">
+      <img src="{IMG[portrait_hat]}" alt="Rev. Dr. Barbara A. F. Brehon" width="800" height="800">
     </div>
   </div>
 </section>

@@ -114,9 +114,10 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 .hero-portrait { position: relative; }
 .hero-portrait img {
   width: 100%;
-  aspect-ratio: 5 / 4;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   border: 1px solid rgba(227, 197, 101, 0.35);
