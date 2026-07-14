@@ -97,7 +97,7 @@ BODY = """
     </a>
     <div class="grid-3">
       <a class="card reveal" href="{LINKS[prayer]}" target="_blank" rel="noopener">
-        <div class="card-icon">{HEART_ICON}</div>
+        <img src="{IMG[prayer_logo]}" alt="Community of Prayer Circle logo" style="height:90px;width:auto;max-width:100%;object-fit:contain;margin-bottom:1rem" loading="lazy">
         <h3 style="font-size:1.15rem">Community of Prayer Circle</h3>
         <p>Sincere prayer is the purest way to converse with God. Open your heart, share your prayer request, and pray for others on our virtual wall. Join the circle every Tuesday &amp; Thursday at 7&nbsp;AM&nbsp;ET.</p>
       </a>
