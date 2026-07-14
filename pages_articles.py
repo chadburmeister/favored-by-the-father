@@ -17,13 +17,15 @@ BODY = """
         <div class="card-links"><a class="btn btn-sm btn-royal" href="/articles/signs-of-pastor-burnout">Read the Article</a></div>
       </article>
       <article class="card reveal">
-        <span class="series-label">Coming Soon</span>
-        <h3 style="font-size:1.25rem">Sabbath Rest for Leaders Who Can't Stop</h3>
-        <p>Why the people who pour into everyone else find it hardest to receive — and how to build a rhythm of rest that actually holds.</p>
+        <span class="series-label">Sabbath &amp; Rest</span>
+        <h3 style="font-size:1.25rem"><a href="/articles/sabbath-rest-for-ministry-leaders" style="color:var(--plum-900)">Sabbath Rest for Leaders Who Can't Stop</a></h3>
+        <p>Why the people who pour into everyone else find it hardest to receive — and how to build a rhythm of sabbath rest that actually holds.</p>
+        <div class="card-links"><a class="btn btn-sm btn-royal" href="/articles/sabbath-rest-for-ministry-leaders">Read the Article</a></div>
       </article>
       <article class="card reveal" style="justify-content:center;text-align:center">
-        <h3 style="font-size:1.25rem">Never miss an article</h3>
-        <p>New Scripture-centered articles are being poured out regularly. Start with the free 7-day devotional and stay connected.</p>
+        <span class="series-label" style="align-self:center">Coming Soon</span>
+        <h3 style="font-size:1.25rem">When Church Hurts: The Path to Mending</h3>
+        <p>Drawing from <em>Perspectives on Church Hurt</em> — new articles are being poured out regularly. Start with the free 7-day devotional and never miss one.</p>
         <div class="card-links" style="justify-content:center"><a class="btn btn-sm btn-gold" href="/#devotional">Get the Free Devotional</a></div>
       </article>
     </div>

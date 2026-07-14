@@ -265,6 +265,19 @@ ARTICLE_BURNOUT_SCHEMA = {
     "mainEntityOfPage": f"{SITE}/articles/signs-of-pastor-burnout",
 }
 
+ARTICLE_SABBATH_SCHEMA = {
+    "@type": "Article",
+    "@id": f"{SITE}/articles/sabbath-rest-for-ministry-leaders#article",
+    "headline": "Sabbath Rest for Leaders Who Can't Stop",
+    "description": "Why ministry leaders find it hardest to rest — and how to build a biblical rhythm of sabbath rest that actually holds, from Genesis to the manna to Jesus.",
+    "author": {"@id": f"{SITE}/#barbara-brehon"},
+    "publisher": {"@id": f"{SITE}/#organization"},
+    "datePublished": "2026-07-14",
+    "dateModified": "2026-07-14",
+    "image": f"{SITE}/PastorBrehon.jpeg",
+    "mainEntityOfPage": f"{SITE}/articles/sabbath-rest-for-ministry-leaders",
+}
+
 PODCAST_SCHEMA = {
     "@type": "PodcastSeries",
     "name": "UNBOXED on Purpose",
@@ -430,6 +443,7 @@ from pages_testimonials import BODY as testimonials_body
 from pages_contact import BODY as contact_body
 from pages_articles import BODY as articles_body
 from pages_article_burnout import BODY as article_burnout_body
+from pages_article_sabbath import BODY as article_sabbath_body
 
 ctx = {"IMG": IMG, "LINKS": LINKS, "BUTTERFLY_SVG": BUTTERFLY_SVG,
        "BOOK_ICON": BOOK_ICON, "PHONE_ICON": PHONE_ICON, "MUSIC_ICON": MUSIC_ICON,
@@ -476,6 +490,10 @@ page(filename="articles/signs-of-pastor-burnout.html", canonical="/articles/sign
      title="7 Signs of Pastor Burnout & the Biblical Path Back | Rev. Dr. Barbara A. F. Brehon",
      description="Pastor burnout is real. Learn seven warning signs of ministry burnout — and a Scripture-centered path back to soul care, sabbath rest, and renewal for pastors and ministry leaders.",
      body=article_burnout_body.format(**ctx), extra_schema=ARTICLE_BURNOUT_SCHEMA)
+page(filename="articles/sabbath-rest-for-ministry-leaders.html", canonical="/articles/sabbath-rest-for-ministry-leaders",
+     title="Sabbath Rest for Ministry Leaders Who Can't Stop | Rev. Dr. Barbara A. F. Brehon",
+     description="Why the people who pour into everyone else find it hardest to rest — and how pastors and ministry leaders can build a biblical rhythm of sabbath rest that actually holds.",
+     body=article_sabbath_body.format(**ctx), extra_schema=ARTICLE_SABBATH_SCHEMA)
 
 # Copy static assets into the output directory
 for static in ("styles.css", "main.js", "404.html", "robots.txt", "sitemap.xml", "PastorBrehon.jpeg", "CommunityOfPrayerCircle.webp", "MusicSinglesCollection.jpg"):
