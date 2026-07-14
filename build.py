@@ -327,6 +327,8 @@ FOOTER = f"""<section class="footer-cta section-tight">
         <a href="/events">Events &amp; Retreat</a>
         <a href="/testimonials">Testimonials</a>
         <a href="{LINKS['prayer']}" target="_blank" rel="noopener">Prayer Request</a>
+        <a href="{LINKS['ios']}" target="_blank" rel="noopener">App &mdash; iOS</a>
+        <a href="{LINKS['android']}" target="_blank" rel="noopener">App &mdash; Android</a>
         <a href="{LINKS['donate']}" target="_blank" rel="noopener">Donate</a>
       </div>
       <div>
