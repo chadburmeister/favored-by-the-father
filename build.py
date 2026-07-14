@@ -343,7 +343,7 @@ FOOTER = f"""<section class="footer-cta section-tight">
     </div>
   </div>
 </footer>
-<script src="/main.js" defer></script>"""
+<script src="/main.js?v=3" defer></script>"""
 
 def page(*, filename: str, title: str, description: str, body: str, canonical: str, extra_schema=None) -> None:
     html = f"""<!DOCTYPE html>
@@ -370,7 +370,7 @@ def page(*, filename: str, title: str, description: str, body: str, canonical: s
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=3">
 </head>
 <body>
 {header(canonical)}
