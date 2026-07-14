@@ -3,11 +3,13 @@
 Assembles shared header/footer around per-page content. Output: public/
 Run: python3 build.py
 """
+import json
 import pathlib
 import shutil
 
 ROOT = pathlib.Path(__file__).parent
 OUT = ROOT / "public"
+SITE = "https://favoredbythefather.com"
 CDN = "https://images.squarespace-cdn.com/content/v1/65faf99814900055181908ab"
 
 IMG = {
@@ -93,6 +95,156 @@ MIC_ICON = """<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke
 HEART_ICON = """<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.4 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.1 3 5.5l7 7z"/></svg>"""
 DOVE_ICON = """<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-1 3-4 5-8 5 2 2 4 3 6 3-1 4-4 6-7 7 5 1 9 0 12-2s5-5 5-9c1 0 2-1 3-3-2 0-3 0-4-1-1-2-4-2-7 0z"/></svg>"""
 
+
+# ---------------- Structured data (JSON-LD) ----------------
+PERSON = {
+    "@type": "Person",
+    "@id": f"{SITE}/#barbara-brehon",
+    "name": "Barbara A. F. Brehon",
+    "alternateName": "Rev. Dr. Barbara A. F. Brehon",
+    "honorificPrefix": "Rev. Dr.",
+    "jobTitle": "Pastor, Author, Podcaster, Mentor",
+    "description": "Pastor, bestselling author, podcaster, lyricist, and spiritual mentor. Founder of Favored by the Father Ministries, Associate Pastor of Beulah Baptist Church, and Adjunct Professor of Discipleship at the Virginia University of Lynchburg.",
+    "image": f"{SITE}/PastorBrehon.jpeg",
+    "url": f"{SITE}/about",
+    "sameAs": [
+        LINKS["linkedin"],
+        LINKS["fb_ministry"],
+        LINKS["youtube"],
+        LINKS["linktree"],
+    ],
+    "worksFor": {"@id": f"{SITE}/#organization"},
+}
+
+ORGANIZATION = {
+    "@type": "Organization",
+    "@id": f"{SITE}/#organization",
+    "name": "Favored by the Father Ministries",
+    "url": SITE,
+    "logo": IMG["logo"],
+    "image": f"{SITE}/PastorBrehon.jpeg",
+    "description": "A church without walls founded in 2003 in Chesapeake, Virginia — nurturing souls and empowering individuals to grow in grace through digital discipleship, mentoring, books, music, and the UNBOXED on Purpose podcast.",
+    "email": "barbara@favoredbythefather.com",
+    "foundingDate": "2003-01",
+    "founder": {"@id": f"{SITE}/#barbara-brehon"},
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chesapeake",
+        "addressRegion": "VA",
+        "addressCountry": "US",
+    },
+    "sameAs": [
+        LINKS["fb_ministry"],
+        LINKS["youtube"],
+        LINKS["linkedin"],
+        LINKS["linktree"],
+    ],
+}
+
+WEBSITE = {
+    "@type": "WebSite",
+    "@id": f"{SITE}/#website",
+    "name": "Favored by the Father Ministries",
+    "url": SITE,
+    "publisher": {"@id": f"{SITE}/#organization"},
+}
+
+def _book(name, url, image, description):
+    return {
+        "@type": "Book",
+        "name": name,
+        "author": {"@id": f"{SITE}/#barbara-brehon"},
+        "url": url,
+        "image": image,
+        "description": description,
+        "bookFormat": "https://schema.org/Paperback",
+        "inLanguage": "en",
+    }
+
+BOOKS_SCHEMA = {
+    "@type": "ItemList",
+    "name": "Books by Rev. Dr. Barbara A. F. Brehon",
+    "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "item": bk}
+        for i, bk in enumerate([
+            _book("Reach Me with SMILES: A Handbook for Developing Disciple Makers", LINKS["b_smiles"], IMG["smiles"], "A practical guide to cultivating intentional, relational, and spiritually mature disciple makers using the SMILES model."),
+            _book("Beyond Discipleship to Relationship: Developing Intimacy with the Lord", LINKS["b_beyond"], IMG["beyond"], "An invitation to move past surface-level discipleship into deep, Christ-centered relationship."),
+            _book("Blooming for Christ: Growing Godly Intimacy", LINKS["b_blooming"], IMG["blooming"], "A nurturing exploration of spiritual growth and intimacy with God."),
+            _book("Points to Ponder: Daily Devotionals and Journaling", LINKS["b_points1"], IMG["points1"], "Daily devotionals and journaling prompts to nurture spiritual growth."),
+            _book("Points to Ponder: Daily Devotionals and Journaling, Volume 2", LINKS["b_points2"], IMG["points2"], "Fresh devotionals and prompts that deepen personal connection with the Lord."),
+            _book("Perspectives: What Singles Really Want from Ministry and Life", LINKS["b_persp_singles"], IMG["persp_singles"], "Honest insight for ministries that long to serve singles well."),
+            _book("100 UNBOXED Perspectives", LINKS["b_unboxed100"], IMG["unboxed100"], "The first 100 episodes of the UNBOXED on Purpose Podcast with cover art and episode summaries."),
+            _book("Perspectives on Church Hurt", LINKS["b_church_hurt"], IMG["church_hurt"], "A compassionate, scripture-centered framework for healing from church hurt, grounded in a nationwide survey."),
+            _book("Mending the Masterpiece: Discussion Workbook", LINKS["b_mending"], IMG["mending"], "The hands-on companion workbook to Perspectives on Church Hurt."),
+            _book("From Cocoon to Soar", LINKS["b_cocoon"], IMG["cocoon"], "Anthology co-authored with 18 leaders, featuring chapters on emerging from darkness and the power of self-discovery."),
+        ])
+    ],
+}
+
+EVENT_SCHEMA = {
+    "@type": "Event",
+    "name": "3rd Annual Fall Spiritual Retreat",
+    "description": "A Christian spiritual retreat in Williamsburg, Virginia — spiritual teaching, meditation, and connection with nature, designed to provide respite and nurture for those who constantly pour into others. Registration closes November 1, 2026.",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-06",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "image": IMG["retreat"],
+    "location": {
+        "@type": "Place",
+        "name": "Williamsburg Christian Retreat Center",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "9275 Barnes Road",
+            "addressLocality": "Toano",
+            "addressRegion": "VA",
+            "postalCode": "23168",
+            "addressCountry": "US",
+        },
+    },
+    "organizer": {"@id": f"{SITE}/#organization"},
+    "performer": {"@id": f"{SITE}/#barbara-brehon"},
+    "offers": {
+        "@type": "Offer",
+        "url": LINKS["eventbrite"],
+        "availability": "https://schema.org/InStock",
+        "validThrough": "2026-11-01",
+    },
+}
+
+PODCAST_SCHEMA = {
+    "@type": "PodcastSeries",
+    "name": "UNBOXED on Purpose",
+    "description": "Real, unfiltered conversations that inspire deeper faith, self-discovery, and the courage to walk boldly in your God-gifted purpose. Hosted by Rev. Dr. Barbara A. F. Brehon.",
+    "url": LINKS["podcast_playlist"],
+    "image": IMG["season5"],
+    "author": {"@id": f"{SITE}/#barbara-brehon"},
+    "publisher": {"@id": f"{SITE}/#organization"},
+}
+
+def page_schema(canonical, title, description, extra=None):
+    crumbs = [{"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"}]
+    if canonical != "/":
+        crumbs.append({"@type": "ListItem", "position": 2, "name": title.split(" | ")[0].split(" — ")[0], "item": SITE + canonical})
+    graph = [
+        WEBSITE,
+        ORGANIZATION,
+        PERSON,
+        {
+            "@type": "WebPage",
+            "@id": SITE + canonical + "#webpage",
+            "url": SITE + canonical,
+            "name": title,
+            "description": description,
+            "isPartOf": {"@id": f"{SITE}/#website"},
+            "about": {"@id": f"{SITE}/#organization"},
+            "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": crumbs},
+        },
+    ]
+    if extra:
+        graph.append(extra)
+    return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
+
 def header(active: str) -> str:
     return f"""<header class="site-header">
   <div class="container nav-wrap">
@@ -167,7 +319,7 @@ FOOTER = f"""<section class="footer-cta section-tight">
 </footer>
 <script src="/main.js" defer></script>"""
 
-def page(*, filename: str, title: str, description: str, body: str, canonical: str) -> None:
+def page(*, filename: str, title: str, description: str, body: str, canonical: str, extra_schema=None) -> None:
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,9 +331,15 @@ def page(*, filename: str, title: str, description: str, body: str, canonical: s
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
-  <meta property="og:image" content="{IMG['portrait']}">
+  <meta property="og:image" content="{SITE + IMG['portrait_hat']}">
   <meta property="og:url" content="https://favoredbythefather.com{canonical}">
+  <meta property="og:site_name" content="Favored by the Father Ministries">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="{SITE + IMG['portrait_hat']}">
+  <script type="application/ld+json">{page_schema(canonical, title, description, extra_schema)}</script>
   <link rel="icon" href="{IMG['logo']}" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,36 +375,36 @@ ctx = {"IMG": IMG, "LINKS": LINKS, "BUTTERFLY_SVG": BUTTERFLY_SVG,
        "MIC_ICON": MIC_ICON, "HEART_ICON": HEART_ICON, "DOVE_ICON": DOVE_ICON}
 
 page(filename="index.html", canonical="/",
-     title="Favored by the Father Ministries | Spiritual Growth & Digital Discipleship",
-     description="A church without walls nurturing souls since 2003. Grow with Rev. Dr. Barbara A. F. Brehon through books, the UNBOXED on Purpose podcast, mentoring, retreats, and music inspired by ministry.",
+     title="Favored by the Father Ministries | Spiritual Growth, Discipleship & Christian Mentoring",
+     description="A church without walls founded in 2003 in Chesapeake, Virginia. Grow in grace with Rev. Dr. Barbara A. F. Brehon through discipleship books, the UNBOXED on Purpose podcast, Christian mentoring, spiritual retreats, and music inspired by ministry.",
      body=home_body.format(**ctx))
 page(filename="about.html", canonical="/about",
-     title="About | Rev. Dr. Barbara A. F. Brehon — Favored by the Father Ministries",
-     description="Meet Rev. Dr. Barbara A. F. Brehon — pastor, bestselling author, podcaster, and spiritual bodybuilder — and discover the foundation, purpose, motto, and mission of Favored by the Father Ministries.",
+     title="Rev. Dr. Barbara A. F. Brehon — Pastor, Author & Christian Mentor | About Favored by the Father Ministries",
+     description="Meet Rev. Dr. Barbara A. F. Brehon: Virginia pastor, bestselling Christian author, UNBOXED on Purpose podcast host, and spiritual mentor. Learn the foundation, purpose, motto, and mission of Favored by the Father Ministries.",
      body=about_body.format(**ctx))
 page(filename="books.html", canonical="/books",
-     title="Books by Rev. Dr. Barbara A. F. Brehon | Favored by the Father Ministries",
-     description="Explore the Disciple's Journey to Christlikeness series, Rev BB's Morning Messages devotionals, the Perspectives series including Perspectives on Church Hurt, and anthology contributions.",
-     body=books_body.format(**ctx))
+     title="Christian Books on Discipleship, Daily Devotionals & Healing from Church Hurt | Rev. Dr. Barbara A. F. Brehon",
+     description="Bestselling Christian books by Rev. Dr. Barbara A. F. Brehon: developing disciple makers (Reach Me with SMILES), intimacy with the Lord, daily devotionals, and Perspectives on Church Hurt — a scripture-centered guide to healing from church hurt.",
+     body=books_body.format(**ctx), extra_schema=BOOKS_SCHEMA)
 page(filename="podcast.html", canonical="/podcast",
-     title="UNBOXED on Purpose Podcast & Music | Favored by the Father Ministries",
-     description="Real, unfiltered conversations that inspire deeper faith and purpose — plus Here, in the Becoming, a landmark album inspired by Dr. Brehon's books, and the ministry music collection.",
-     body=podcast_body.format(**ctx))
+     title="UNBOXED on Purpose — Christian Podcast on Faith & Purpose | Plus Music Inspired by Ministry",
+     description="Listen to UNBOXED on Purpose, a Christian podcast of real, unfiltered conversations about faith, purpose, and breaking free — plus Here, in the Becoming, the gospel album inspired by Dr. Brehon's books.",
+     body=podcast_body.format(**ctx), extra_schema=PODCAST_SCHEMA)
 page(filename="mentoring.html", canonical="/mentoring",
-     title="Mentoring — Brookside & Haven for Ravens | Favored by the Father Ministries",
-     description="Brookside virtual mentoring, Haven for Ravens sessions for those who pour into others, and the Community of Prayer Circle. A safe place to be nurtured and grow.",
+     title="Christian Mentoring & Spiritual Direction — Brookside and Haven for Ravens | Favored by the Father Ministries",
+     description="One-on-one Christian mentoring and spiritual direction, virtual or in person. Brookside scripture-centered mentoring, Haven for Ravens respite for pastors, caregivers and leaders, and a community prayer circle.",
      body=mentoring_body.format(**ctx))
 page(filename="events.html", canonical="/events",
-     title="Events 2026 & Fall Spiritual Retreat | Favored by the Father Ministries",
-     description="Mini Masterclass Series, Chat & Chew book talks, group sessions, and the 3rd Annual Fall Spiritual Retreat, Nov 5–6, 2026 at Williamsburg Christian Retreat Center.",
-     body=events_body.format(**ctx))
+     title="Christian Spiritual Retreat in Virginia — Nov 5–6, 2026 | Events & Masterclasses",
+     description="Join the 3rd Annual Fall Spiritual Retreat, November 5–6, 2026 at Williamsburg Christian Retreat Center in Toano, Virginia — plus the Mini Masterclass Series, Chat & Chew book talks, and group teaching sessions.",
+     body=events_body.format(**ctx), extra_schema=EVENT_SCHEMA)
 page(filename="testimonials.html", canonical="/testimonials",
-     title="Testimonials | Favored by the Father Ministries",
-     description="Stories of healing, renewal, and transformation from Haven for Ravens, mentoring, and the ministry of Rev. Dr. Barbara A. F. Brehon.",
+     title="Testimonials — Christian Mentoring & Retreat Stories | Favored by the Father Ministries",
+     description="Real stories of healing, renewal, and spiritual transformation from Haven for Ravens, Brookside mentoring, and the ministry of Rev. Dr. Barbara A. F. Brehon.",
      body=testimonials_body.format(**ctx))
 page(filename="contact.html", canonical="/contact",
-     title="Contact & Prayer Requests | Favored by the Father Ministries",
-     description="Reach Rev. Dr. Barbara A. F. Brehon — email the ministry, book a session, share a prayer request, download the ministry app, or support the work with a gift.",
+     title="Contact, Prayer Requests & Booking | Favored by the Father Ministries",
+     description="Contact Rev. Dr. Barbara A. F. Brehon: book a speaking engagement, mentoring session, or podcast appearance, share a prayer request, download the free ministry app, or give to support the ministry.",
      body=contact_body.format(**ctx))
 
 # Copy static assets into the output directory
