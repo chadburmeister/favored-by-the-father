@@ -7,8 +7,9 @@ BODY = """
       <h1>Favored <span class="script" style="font-size:0.85em">by the</span> Father <span style="display:block;font-size:0.55em;letter-spacing:0.04em;margin-top:0.3rem;color:var(--lavender)">Ministries</span></h1>
       <p class="lede">Nurturing souls and empowering individuals to grow. Through digital discipleship and fellowship, we help you — and the ministry you serve — increase effectiveness for Kingdom building.</p>
       <div class="btn-row">
-        <a class="btn btn-gold" href="/mentoring">Begin Your Journey</a>
+        <a class="btn btn-gold" href="#devotional">Get the Free Daily Devotional</a>
         <a class="btn btn-outline" href="{LINKS[podcast_playlist]}" target="_blank" rel="noopener">Listen to the Podcast</a>
+        <a class="btn btn-outline" href="/events#bible-institute">Bible Institute</a>
       </div>
       <p class="hero-verse">"Grow in the grace and knowledge of our Lord and Savior Jesus Christ." <br><strong>— 2 Peter 3:18 NLT</strong></p>
     </div>

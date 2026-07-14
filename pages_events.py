@@ -122,7 +122,7 @@ BODY = """
       <span class="eyebrow">Ongoing in 2026</span>
       <h2>Teaching Experiences</h2>
     </div>
-    <article class="glass reveal" style="border:1.5px solid rgba(227,197,101,0.5);margin-bottom:1.8rem">
+    <article class="glass reveal" id="bible-institute" style="border:1.5px solid rgba(227,197,101,0.5);margin-bottom:1.8rem">
       <span class="eyebrow" style="color:var(--gold-soft)">New &mdash; Enrolling Now</span>
       <h3 style="font-size:1.6rem">Favored by the Father Bible Institute</h3>
       <p>Join Rev. Dr. Barbara A. F. Brehon for the Favored by the Father Bible Institute &mdash; an immersive teaching series where she guides you through the spiritual insights and practical applications found in her published works. Secure your spot for this transformative, paid experience today by registering through our official Eventbrite page.</p>
