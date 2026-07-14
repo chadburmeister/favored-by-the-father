@@ -252,6 +252,19 @@ FAQ_SCHEMA = {
     ],
 }
 
+ARTICLE_BURNOUT_SCHEMA = {
+    "@type": "Article",
+    "@id": f"{SITE}/articles/signs-of-pastor-burnout#article",
+    "headline": "Seven Signs of Pastor Burnout (and the Biblical Path Back)",
+    "description": "Seven warning signs of ministry burnout and a Scripture-centered path back to soul care, sabbath rest, and renewal for pastors and ministry leaders.",
+    "author": {"@id": f"{SITE}/#barbara-brehon"},
+    "publisher": {"@id": f"{SITE}/#organization"},
+    "datePublished": "2026-07-14",
+    "dateModified": "2026-07-14",
+    "image": f"{SITE}/PastorBrehon.jpeg",
+    "mainEntityOfPage": f"{SITE}/articles/signs-of-pastor-burnout",
+}
+
 PODCAST_SCHEMA = {
     "@type": "PodcastSeries",
     "name": "UNBOXED on Purpose",
@@ -304,6 +317,7 @@ def header(active: str) -> str:
       <a href="/podcast">Podcast &amp; Music</a>
       <a href="/mentoring">Mentoring</a>
       <a href="/events">Events</a>
+      <a href="/articles">Articles</a>
       <a href="/testimonials">Testimonials</a>
       <a href="/contact">Contact</a>
       <a class="nav-cta" href="{LINKS['donate']}" target="_blank" rel="noopener">Donate</a>
@@ -334,6 +348,7 @@ FOOTER = f"""<section class="footer-cta section-tight">
         <a href="/about">About &amp; Beliefs</a>
         <a href="/books">Books by Dr.&nbsp;Brehon</a>
         <a href="/#devotional">Free 7-Day Devotional</a>
+        <a href="/articles">Articles</a>
         <a href="/podcast">UNBOXED Podcast</a>
         <a href="/mentoring">Mentoring &amp; Brookside</a>
       </div>
@@ -360,7 +375,7 @@ FOOTER = f"""<section class="footer-cta section-tight">
     </div>
   </div>
 </footer>
-<script src="/main.js?v=3" defer></script>"""
+<script src="/main.js?v=4" defer></script>"""
 
 def page(*, filename: str, title: str, description: str, body: str, canonical: str, extra_schema=None) -> None:
     html = f"""<!DOCTYPE html>
@@ -387,7 +402,7 @@ def page(*, filename: str, title: str, description: str, body: str, canonical: s
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=3">
+  <link rel="stylesheet" href="/styles.css?v=4">
 </head>
 <body>
 {header(canonical)}
@@ -399,6 +414,7 @@ def page(*, filename: str, title: str, description: str, body: str, canonical: s
 </html>
 """
     OUT.mkdir(exist_ok=True)
+    (OUT / filename).parent.mkdir(parents=True, exist_ok=True)
     (OUT / filename).write_text(html)
     print(f"wrote public/{filename} ({len(html)} bytes)")
 
@@ -412,6 +428,8 @@ from pages_mentoring import BODY as mentoring_body
 from pages_events import BODY as events_body
 from pages_testimonials import BODY as testimonials_body
 from pages_contact import BODY as contact_body
+from pages_articles import BODY as articles_body
+from pages_article_burnout import BODY as article_burnout_body
 
 ctx = {"IMG": IMG, "LINKS": LINKS, "BUTTERFLY_SVG": BUTTERFLY_SVG,
        "BOOK_ICON": BOOK_ICON, "PHONE_ICON": PHONE_ICON, "MUSIC_ICON": MUSIC_ICON,
@@ -449,6 +467,15 @@ page(filename="contact.html", canonical="/contact",
      title="Contact, Prayer Requests & Booking | Favored by the Father Ministries",
      description="Contact Rev. Dr. Barbara A. F. Brehon: book a speaking engagement, mentoring session, or podcast appearance, share a prayer request, download the free ministry app, or give to support the ministry.",
      body=contact_body.format(**ctx))
+
+page(filename="articles.html", canonical="/articles",
+     title="Articles on Soul Care, Discipleship & Ministry Renewal | Favored by the Father Ministries",
+     description="Scripture-centered articles from Rev. Dr. Barbara A. F. Brehon on pastor burnout, soul care, sabbath rest, discipleship, and spiritual growth for pastors and ministry leaders.",
+     body=articles_body.format(**ctx))
+page(filename="articles/signs-of-pastor-burnout.html", canonical="/articles/signs-of-pastor-burnout",
+     title="7 Signs of Pastor Burnout & the Biblical Path Back | Rev. Dr. Barbara A. F. Brehon",
+     description="Pastor burnout is real. Learn seven warning signs of ministry burnout — and a Scripture-centered path back to soul care, sabbath rest, and renewal for pastors and ministry leaders.",
+     body=article_burnout_body.format(**ctx), extra_schema=ARTICLE_BURNOUT_SCHEMA)
 
 # Copy static assets into the output directory
 for static in ("styles.css", "main.js", "404.html", "robots.txt", "sitemap.xml", "PastorBrehon.jpeg", "CommunityOfPrayerCircle.webp", "MusicSinglesCollection.jpg"):
