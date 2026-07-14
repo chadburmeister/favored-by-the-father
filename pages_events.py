@@ -29,10 +29,119 @@ BODY = """
         </div>
       </div>
       <p style="color:var(--ink-soft)">A getaway filled with spiritual teaching, meditation, and connection with nature — designed to provide respite and nurture for those who constantly pour into others. Mentor and mentee teams welcomed.</p>
-      <p style="color:var(--ink-soft)"><strong>All registration options close November 1, 2026.</strong></p>
+      <p style="color:var(--ink-soft)"><strong>Registration includes lodging, meals, snacks, retreat materials, and all sessions.</strong> Space is limited, rates increase by phase, and the early-bird phase has already sold out.</p>
+      <p data-countdown-wrap style="margin:0 0 1.2rem"><span class="countdown-chip">Registration closes Nov 1 — <strong data-countdown="2026-11-01">limited time</strong> left</span></p>
       <div class="btn-row">
         <a class="btn btn-gold" href="{LINKS[eventbrite]}" target="_blank" rel="noopener">Reserve Now on Eventbrite</a>
+        <a class="btn btn-outline-dark" href="#pricing">Pricing &amp; FAQ</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETREAT PRICING -->
+<section class="section-tight" id="pricing" style="background:var(--ivory-warm)">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Simple, Transparent Pricing</span>
+      <h2>Choose your <span class="script" style="font-size:1.1em">retreat</span> experience</h2>
+      <p>Every option includes retreat materials and that day's sessions. The full experience adds overnight lodging, meals, and snacks.</p>
+    </div>
+    <div class="price-grid">
+      <article class="price-card featured reveal">
+        <span class="price-flag">Full Experience</span>
+        <div class="price-tier">Regular Registration</div>
+        <div class="price-amount"><sup>$</sup>250</div>
+        <div class="price-note">+ processing fee</div>
+        <p class="price-desc">Both days with overnight stay — lodging, meals, snacks, retreat materials, and every session from Thursday 4&nbsp;PM through Friday 11&nbsp;AM.</p>
+        <a class="btn btn-gold" href="{LINKS[eventbrite]}" target="_blank" rel="noopener">Reserve Your Place</a>
+      </article>
+      <article class="price-card reveal">
+        <div class="price-tier">Day 1 Only</div>
+        <div class="price-amount"><sup>$</sup>165</div>
+        <div class="price-note">+ processing fee</div>
+        <p class="price-desc">Thursday, November 5 — the opening teaching, evening fellowship, and campfire gathering.</p>
+        <a class="btn btn-outline-dark" href="{LINKS[eventbrite]}" target="_blank" rel="noopener">Register for Day 1</a>
+      </article>
+      <article class="price-card reveal">
+        <div class="price-tier">Day 2 Only</div>
+        <div class="price-amount"><sup>$</sup>95</div>
+        <div class="price-note">+ processing fee</div>
+        <p class="price-desc">Friday, November 6 — morning teaching, meditation, and closing sessions through 11&nbsp;AM.</p>
+        <a class="btn btn-outline-dark" href="{LINKS[eventbrite]}" target="_blank" rel="noopener">Register for Day 2</a>
+      </article>
+    </div>
+    <p class="price-fine">Checkout is securely handled on Eventbrite. Tickets are non-refundable. All registration closes November&nbsp;1,&nbsp;2026.</p>
+  </div>
+</section>
+
+<!-- VOICES FROM PAST GATHERINGS -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Voices of Transformation</span>
+      <h2>They arrive poured out. <span class="script" style="font-size:1.15em">They leave filled.</span></h2>
+      <p>From the Haven and past ministry gatherings — the kind of renewal that awaits you in Williamsburg.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card quote-card reveal">
+        <div class="media-frame" style="margin-bottom:1.2rem"><img src="{IMG[retreat2024]}" alt="Fall Spiritual Retreat 2024 at Williamsburg Christian Retreat Center" loading="lazy"></div>
+        <p>A safe place and sanctuary with God. This was an awesome event — a safe place to be encouraged and uplifted in all areas of my life.</p>
+        <div class="quote-attr">A.R.R.</div>
+      </article>
+      <article class="card quote-card reveal">
+        <div class="media-frame" style="margin-bottom:1.2rem"><img src="{IMG[brookside]}" alt="Brookside — A Sacred Haven" loading="lazy"></div>
+        <p>God saw that I was growing tired. He knew my cup was empty. I received healing, solitude, refreshments and nourishment for my body, renewal, clarity and transformation.</p>
+        <div class="quote-attr">K.H.H.</div>
+      </article>
+      <article class="card quote-card reveal">
+        <div class="media-frame" style="margin-bottom:1.2rem"><img src="{IMG[butterfly]}" alt="Butterfly — emerging and soaring" loading="lazy"></div>
+        <p>It sure does feel good to be poured into while being taken seriously and connecting on divine levels. The Haven made it make sense. Now it's time to soar.</p>
+        <div class="quote-attr">E.D.</div>
+      </article>
+    </div>
+    <div class="btn-row" style="justify-content:center;margin-top:2rem">
+      <a class="btn btn-outline-dark" href="/testimonials">Read More Testimonials</a>
+    </div>
+  </div>
+</section>
+
+<!-- RETREAT FAQ -->
+<section class="section-tight" style="background:var(--white)">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Retreat questions, <span class="script" style="font-size:1.1em">answered</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item">
+        <summary>When and where is the retreat?</summary>
+        <p>Thursday, November 5 (4:00 PM) through Friday, November 6, 2026 (11:00 AM EST) at the Williamsburg Christian Retreat Center, 9275 Barnes Road, Toano, VA 23168.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is included in my registration?</summary>
+        <p>Regular Registration includes lodging, meals, snacks, retreat materials, and all sessions. Day-only options include the sessions and materials for that day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does it cost?</summary>
+        <p>Regular Registration is $250, Day 1 only is $165, and Day 2 only is $95, plus Eventbrite processing fees. Rates increase by phase — the early-bird rate has already sold out, so today's rate is the best remaining price.</p>
+      </details>
+      <details class="faq-item">
+        <summary>When does registration close?</summary>
+        <p>All registration options close November 1, 2026 — and space is limited, so earlier is better.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What will we actually do?</summary>
+        <p>Spiritual teaching, meditation, peaceful nature walks, campfire fellowship, and unhurried time to breathe, reflect, and connect with the Lord and with like-minded friends.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I come with my mentor or mentee?</summary>
+        <p>Yes — mentor and mentee teams are warmly welcomed. The retreat is designed for those who pour into others, together.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is the refund policy?</summary>
+        <p>Tickets are non-refundable. If you have questions before registering, email <a href="mailto:barbara@favoredbythefather.com">barbara@favoredbythefather.com</a>.</p>
+      </details>
     </div>
   </div>
 </section>

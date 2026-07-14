@@ -46,3 +46,20 @@
   var y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+// Countdown chips — <element data-countdown="YYYY-MM-DD"> shows whole days remaining
+(function () {
+  var els = document.querySelectorAll('[data-countdown]');
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    var target = new Date(el.getAttribute('data-countdown') + 'T23:59:59-05:00');
+    var days = Math.ceil((target.getTime() - Date.now()) / 86400000);
+    if (days > 0) {
+      el.textContent = days + (days === 1 ? ' day' : ' days');
+    } else {
+      var wrap = el.closest ? el.closest('[data-countdown-wrap]') : null;
+      if (wrap) wrap.style.display = 'none';
+      else el.textContent = 'almost no time';
+    }
+  }
+})();

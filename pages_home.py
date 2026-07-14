@@ -92,6 +92,32 @@ BODY = """
   </div>
 </section>
 
+<!-- FREE 7-DAY DEVOTIONAL -->
+<section class="leadmagnet" id="devotional">
+  <div class="container">
+    <div class="leadmagnet-card reveal">
+      <div class="leadmagnet-cover">
+        <img src="{IMG[points1]}" alt="Points to Ponder — Daily Devotionals and Journaling book cover" loading="lazy">
+      </div>
+      <div>
+        <span class="eyebrow">Free Gift</span>
+        <h2>Begin with 7 days of <span class="script" style="font-size:1.1em">grace</span></h2>
+        <p style="color:var(--ink-soft)">Receive a free 7-day devotional excerpt from <em>Points to Ponder: Daily Devotionals and Journaling</em> — one scripture-centered reading and journaling prompt each morning, delivered to your inbox.</p>
+        <ul class="leadmagnet-list">
+          <li>Seven daily readings drawn from the bestselling devotional</li>
+          <li>A reflection prompt to journal with the Lord each day</li>
+          <li>A gentle on-ramp to the full Points to Ponder journey</li>
+        </ul>
+        <div class="btn-row" style="margin-top:0">
+          <a class="btn btn-gold" href="mailto:info@favoredbythefather.com?subject=Please%20send%20my%20free%207-Day%20Devotional&amp;body=Hi%2C%0A%0APlease%20send%20the%20free%207-day%20devotional%20excerpt%20from%20Points%20to%20Ponder%20to%20this%20email%20address.%0A%0A%28Sent%20from%20favoredbythefather.com%29">Send Me the Devotional</a>
+          <a class="btn btn-outline-dark" href="/books">Explore the Full Book</a>
+        </div>
+        <p style="font-size:0.8rem;color:var(--ink-soft);margin-top:1rem">One email with your 7-day excerpt — no spam, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURED: NEW RELEASE -->
 <section>
   <div class="container grid-2" style="align-items:center">
@@ -112,7 +138,7 @@ BODY = """
 </section>
 
 <!-- MEET DR. BREHON -->
-<section class="panel-dark on-dark">
+<section class="panel-warm">
   <div class="container grid-2" style="align-items:center">
     <div class="reveal">
       <span class="eyebrow">Visionary Servant Leader</span>
@@ -141,7 +167,8 @@ BODY = """
       <span class="eyebrow">Events 2026</span>
       <h2>3rd Annual Fall <span class="script" style="font-size:1.1em">Spiritual</span> Retreat</h2>
       <p style="color:var(--ink-soft)"><strong>November 5–6, 2026 · Thursday–Friday</strong><br>Williamsburg Christian Retreat Center<br>9275 Barnes Road, Toano, VA 23168</p>
-      <p style="color:var(--ink-soft)">A getaway of spiritual teaching, meditation, and connection with nature — designed to provide respite and nurture for those who constantly pour into others. Registration closes November&nbsp;1,&nbsp;2026.</p>
+      <p style="color:var(--ink-soft)">A getaway of spiritual teaching, meditation, and connection with nature — designed to provide respite and nurture for those who constantly pour into others. Space is limited and the early-bird phase has already sold out.</p>
+      <p data-countdown-wrap style="margin:1.2rem 0 0"><span class="countdown-chip">Registration closes Nov 1 — <strong data-countdown="2026-11-01">limited time</strong> left</span></p>
       <div class="btn-row">
         <a class="btn btn-gold" href="{LINKS[eventbrite]}" target="_blank" rel="noopener">Reserve Your Place</a>
         <a class="btn btn-outline-dark" href="/events">All Events &amp; Masterclasses</a>

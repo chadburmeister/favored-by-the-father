@@ -207,9 +207,34 @@ EVENT_SCHEMA = {
     "offers": {
         "@type": "Offer",
         "url": LINKS["eventbrite"],
+        "price": "250.00",
+        "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "validThrough": "2026-11-01",
     },
+}
+
+FAQ_SCHEMA = {
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+        for q, a in [
+            ("When and where is the 3rd Annual Fall Spiritual Retreat?",
+             "Thursday, November 5 (4:00 PM) through Friday, November 6, 2026 (11:00 AM EST) at the Williamsburg Christian Retreat Center, 9275 Barnes Road, Toano, VA 23168."),
+            ("What is included in retreat registration?",
+             "Regular Registration includes lodging, meals, snacks, retreat materials, and all sessions. Day-only options include the sessions and materials for that day."),
+            ("How much does the retreat cost?",
+             "Regular Registration is $250, Day 1 only is $165, and Day 2 only is $95, plus Eventbrite processing fees. Rates increase by phase and the early-bird rate has sold out."),
+            ("When does registration close?",
+             "All registration options close November 1, 2026. Space is limited."),
+            ("What activities are included?",
+             "Spiritual teaching, meditation, peaceful nature walks, campfire fellowship, and unhurried time to reflect and connect."),
+            ("Can mentors and mentees attend together?",
+             "Yes — mentor and mentee teams are warmly welcomed."),
+            ("What is the refund policy?",
+             "Tickets are non-refundable. Questions may be emailed to barbara@favoredbythefather.com."),
+        ]
+    ],
 }
 
 PODCAST_SCHEMA = {
@@ -242,7 +267,7 @@ def page_schema(canonical, title, description, extra=None):
         },
     ]
     if extra:
-        graph.append(extra)
+        graph.extend(extra if isinstance(extra, list) else [extra])
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
 
 def header(active: str) -> str:
@@ -293,6 +318,7 @@ FOOTER = f"""<section class="footer-cta section-tight">
         <h4>Explore</h4>
         <a href="/about">About &amp; Beliefs</a>
         <a href="/books">Books by Dr.&nbsp;Brehon</a>
+        <a href="/#devotional">Free 7-Day Devotional</a>
         <a href="/podcast">UNBOXED Podcast</a>
         <a href="/mentoring">Mentoring &amp; Brookside</a>
       </div>
@@ -397,7 +423,7 @@ page(filename="mentoring.html", canonical="/mentoring",
 page(filename="events.html", canonical="/events",
      title="Christian Spiritual Retreat in Virginia — Nov 5–6, 2026 | Events & Masterclasses",
      description="Join the 3rd Annual Fall Spiritual Retreat, November 5–6, 2026 at Williamsburg Christian Retreat Center in Toano, Virginia — plus the Mini Masterclass Series, Chat & Chew book talks, and group teaching sessions.",
-     body=events_body.format(**ctx), extra_schema=EVENT_SCHEMA)
+     body=events_body.format(**ctx), extra_schema=[EVENT_SCHEMA, FAQ_SCHEMA])
 page(filename="testimonials.html", canonical="/testimonials",
      title="Testimonials — Christian Mentoring & Retreat Stories | Favored by the Father Ministries",
      description="Real stories of healing, renewal, and spiritual transformation from Haven for Ravens, Brookside mentoring, and the ministry of Rev. Dr. Barbara A. F. Brehon.",
