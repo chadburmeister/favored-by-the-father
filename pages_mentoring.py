@@ -53,6 +53,32 @@ BODY = """
   </div>
 </section>
 
+<!-- WHO WE SERVE -->
+<section class="section-tight" style="background:var(--ivory-warm)">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Ministering to Those Who Minister</span>
+      <h2>Care for those who <span class="script" style="font-size:1.1em">carry</span> the ministry</h2>
+      <p>Healthy churches need healthy pastors. Brookside and the Haven exist to shepherd the shepherds — confidential soul care for the people everyone else leans on.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <h3 style="font-size:1.15rem">Pastors &amp; Ministry Leaders</h3>
+        <p>Pastor burnout, ministry stress, and compassion fatigue are real. Find a safe, confidential place for spiritual renewal, sabbath rest, and Scripture-centered spiritual direction — before exhaustion sets in.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="font-size:1.15rem">Women in Ministry &amp; Pastors' Wives</h3>
+        <p>A Spirit-led sisterhood of encouragement for women in church leadership — clarity, confidence, and community with a mentor who has walked the road ahead of you.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="font-size:1.15rem">Caregivers &amp; Mentors</h3>
+        <p>If you constantly pour into others, your cup needs filling too. Receive soul care, sacred listening, and spiritual formation that restores emotional and spiritual wellness.</p>
+      </div>
+    </div>
+    <p style="text-align:center;max-width:52em;margin:2rem auto 0;color:var(--ink-soft)">Iron sharpens iron. Whether you need a one-on-one mentoring relationship at Brookside, a Haven session to recover from ministry burnout, or a <a href="/events">soul care retreat in Virginia</a>, Rev. Dr. Brehon meets you with biblical guidance and Christ-centered care.</p>
+  </div>
+</section>
+
 <!-- PRAYER CIRCLE -->
 <section>
   <div class="container grid-2" style="align-items:center">

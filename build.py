@@ -434,12 +434,12 @@ page(filename="podcast.html", canonical="/podcast",
      description="Listen to UNBOXED on Purpose, a Christian podcast of real, unfiltered conversations about faith, purpose, and breaking free — plus Here, in the Becoming, the gospel album inspired by Dr. Brehon's books.",
      body=podcast_body.format(**ctx), extra_schema=PODCAST_SCHEMA)
 page(filename="mentoring.html", canonical="/mentoring",
-     title="Christian Mentoring & Spiritual Direction — Brookside and Haven for Ravens | Favored by the Father Ministries",
-     description="One-on-one Christian mentoring and spiritual direction, virtual or in person. Brookside scripture-centered mentoring, Haven for Ravens respite for pastors, caregivers and leaders, and a community prayer circle.",
+     title="Soul Care for Pastors & Ministry Leaders — Brookside Mentoring and Haven for Ravens | Favored by the Father Ministries",
+     description="Confidential soul care, Christian mentoring, and spiritual direction for pastors, caregivers, and ministry leaders. Heal from ministry burnout, find sabbath rest, and be renewed at Brookside and the Haven for Ravens.",
      body=mentoring_body.format(**ctx))
 page(filename="events.html", canonical="/events",
-     title="Christian Spiritual Retreat in Virginia — Nov 5–6, 2026 | Events & Masterclasses",
-     description="Join the 3rd Annual Fall Spiritual Retreat, November 5–6, 2026 at Williamsburg Christian Retreat Center in Toano, Virginia — plus the Mini Masterclass Series, Chat & Chew book talks, and group teaching sessions.",
+     title="Christian Spiritual Retreat in Virginia for Pastors & Ministry Leaders — Nov 5–6, 2026 | Events",
+     description="A soul care retreat for pastors, caregivers, and ministry leaders: the 3rd Annual Fall Spiritual Retreat, November 5–6, 2026 at Williamsburg Christian Retreat Center in Toano, Virginia — plus the Mini Masterclass Series, Chat & Chew book talks, and the Bible Institute.",
      body=events_body.format(**ctx), extra_schema=[EVENT_SCHEMA, FAQ_SCHEMA])
 page(filename="testimonials.html", canonical="/testimonials",
      title="Testimonials — Christian Mentoring & Retreat Stories | Favored by the Father Ministries",
