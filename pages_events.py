@@ -75,37 +75,6 @@ BODY = """
   </div>
 </section>
 
-<!-- VOICES FROM PAST GATHERINGS -->
-<section>
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Voices of Transformation</span>
-      <h2>They arrive poured out. <span class="script" style="font-size:1.15em">They leave filled.</span></h2>
-      <p>From the Haven and past ministry gatherings — the kind of renewal that awaits you in Williamsburg.</p>
-    </div>
-    <div class="grid-3">
-      <article class="card quote-card reveal">
-        <div class="media-frame" style="margin-bottom:1.2rem"><img src="{IMG[retreat2024]}" alt="Fall Spiritual Retreat 2024 at Williamsburg Christian Retreat Center" loading="lazy"></div>
-        <p>A safe place and sanctuary with God. This was an awesome event — a safe place to be encouraged and uplifted in all areas of my life.</p>
-        <div class="quote-attr">A.R.R.</div>
-      </article>
-      <article class="card quote-card reveal">
-        <div class="media-frame" style="margin-bottom:1.2rem"><img src="{IMG[brookside]}" alt="Brookside — A Sacred Haven" loading="lazy"></div>
-        <p>God saw that I was growing tired. He knew my cup was empty. I received healing, solitude, refreshments and nourishment for my body, renewal, clarity and transformation.</p>
-        <div class="quote-attr">K.H.H.</div>
-      </article>
-      <article class="card quote-card reveal">
-        <div class="media-frame" style="margin-bottom:1.2rem"><img src="{IMG[butterfly]}" alt="Butterfly — emerging and soaring" loading="lazy"></div>
-        <p>It sure does feel good to be poured into while being taken seriously and connecting on divine levels. The Haven made it make sense. Now it's time to soar.</p>
-        <div class="quote-attr">E.D.</div>
-      </article>
-    </div>
-    <div class="btn-row" style="justify-content:center;margin-top:2rem">
-      <a class="btn btn-outline-dark" href="/testimonials">Read More Testimonials</a>
-    </div>
-  </div>
-</section>
-
 <!-- RETREAT FAQ -->
 <section class="section-tight" style="background:var(--white)">
   <div class="container">
