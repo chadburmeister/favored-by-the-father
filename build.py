@@ -59,6 +59,7 @@ LINKS = {
     "singles": "https://youtube.com/playlist?list=PLTpFdYsdDUf8UNVKAgOmuT3eLELTyQF-p",
     "appearances": "https://youtube.com/playlist?list=PLTpFdYsdDUf-nVrEWEOoKZEgC41K7X0ou",
     "eventbrite": "https://www.eventbrite.com/e/3rd-annual-fall-spiritual-retreat-tickets-1980435173917",
+    "eventbrite_org": "https://www.eventbrite.com/o/85022479213",
     "amazon_author": "https://www.amazon.com/s?k=Barbara+A.+F.+Brehon",
     "b_smiles": "https://www.amazon.com/Reach-SMILES-Developing-Disciples-Christlikeness/dp/B0DRZSFDQT",
     "b_beyond": "https://www.amazon.com/Beyond-Discipleship-Relationship-Developing-Intimacy/dp/1963565096",
