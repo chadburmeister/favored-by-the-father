@@ -21,21 +21,21 @@ BODY = """
         <span class="series-label">Disciple Making</span>
         <h3 style="font-size:1.25rem">Reach Me with SMILES</h3>
         <p>A practical handbook for developing disciple makers using the SMILES model — plus space to commune with God through journaling.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_smiles]}" target="_blank" rel="noopener">Buy on Amazon</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy on Amazon</a></div>
       </article>
       <article class="card book-card reveal">
         <div class="book-cover"><img src="{IMG[beyond]}" alt="Beyond Discipleship to Relationship book cover" loading="lazy"></div>
         <span class="series-label">Intimacy with the Lord</span>
         <h3 style="font-size:1.25rem">Beyond Discipleship to Relationship</h3>
         <p>An invitation to move past surface-level discipleship into deep, Christ-centered relationships that transform hearts and lives.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_beyond]}" target="_blank" rel="noopener">Buy on Amazon</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy on Amazon</a></div>
       </article>
       <article class="card book-card reveal">
         <div class="book-cover"><img src="{IMG[blooming]}" alt="Blooming for Christ book cover" loading="lazy"></div>
         <span class="series-label">Spiritual Growth</span>
         <h3 style="font-size:1.25rem">Blooming for Christ</h3>
         <p>A nurturing exploration of growing godly intimacy — encouraging believers to blossom in faith and purpose, in stages, like plants.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_blooming]}" target="_blank" rel="noopener">Buy on Amazon</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy on Amazon</a></div>
       </article>
     </div>
   </div>
@@ -55,14 +55,14 @@ BODY = """
         <span class="series-label">Daily Devotional</span>
         <h3 style="font-size:1.25rem">Points to Ponder</h3>
         <p>Daily devotionals and journaling to nurture your walk, one morning at a time.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_points1]}" target="_blank" rel="noopener">Buy Volume 1</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy Volume 1</a></div>
       </article>
       <article class="card book-card reveal">
         <div class="book-cover"><img src="{IMG[points2]}" alt="Points to Ponder Volume 2 cover" loading="lazy"></div>
         <span class="series-label">Daily Devotional</span>
         <h3 style="font-size:1.25rem">Points to Ponder, Volume 2</h3>
         <p>The journey continues with fresh devotionals and prompts that deepen personal connection with the Lord.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_points2]}" target="_blank" rel="noopener">Buy Volume 2</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy Volume 2</a></div>
       </article>
     </div>
   </div>
@@ -82,28 +82,28 @@ BODY = """
         <span class="series-label">Available Now</span>
         <h3 style="font-size:1.15rem">Perspectives on Church Hurt</h3>
         <p>A compassionate, scripture-centered framework for healing — grounded in a nationwide survey.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_church_hurt]}" target="_blank" rel="noopener">Buy Now</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy Now</a></div>
       </article>
       <article class="card book-card reveal">
         <div class="book-cover"><img src="{IMG[mending]}" alt="Mending the Masterpiece workbook cover" loading="lazy"></div>
         <span class="series-label">Companion Workbook</span>
         <h3 style="font-size:1.15rem">Mending the Masterpiece</h3>
         <p>Targeted exercises, journaling prompts, and scripture applications to actively process pain and move forward in faith.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_mending]}" target="_blank" rel="noopener">Buy Now</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy Now</a></div>
       </article>
       <article class="card book-card reveal">
         <div class="book-cover"><img src="{IMG[persp_singles]}" alt="Perspectives: What Singles Really Want cover" loading="lazy"></div>
         <span class="series-label">Perspectives</span>
         <h3 style="font-size:1.15rem">What Singles Really Want from Ministry &amp; Life</h3>
         <p>Honest insight for ministries that long to serve singles well.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_persp_singles]}" target="_blank" rel="noopener">Buy Now</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy Now</a></div>
       </article>
       <article class="card book-card reveal">
         <div class="book-cover"><img src="{IMG[unboxed100]}" alt="100 UNBOXED Perspectives cover" loading="lazy"></div>
         <span class="series-label">Podcast Companion</span>
         <h3 style="font-size:1.15rem">100 UNBOXED Perspectives</h3>
         <p>The first 100 episodes of the UNBOXED on Purpose Podcast — cover art and episode summaries.</p>
-        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[b_unboxed100]}" target="_blank" rel="noopener">Buy Now</a></div>
+        <div class="card-links"><a class="btn btn-sm btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy Now</a></div>
       </article>
     </div>
   </div>
@@ -120,7 +120,7 @@ BODY = """
       <h2>From Cocoon to Soar</h2>
       <p>Co-authored with 18 amazing leaders, featuring two chapters by Dr. Brehon: <em>Chapter 17 — Emerging from Darkness</em> and <em>Chapter 18 — The Power of Self-Discovery</em>.</p>
       <div class="btn-row">
-        <a class="btn btn-gold" href="{LINKS[b_cocoon]}" target="_blank" rel="noopener">Buy From Cocoon to Soar</a>
+        <a class="btn btn-gold" href="{LINKS[amazon_author]}" target="_blank" rel="noopener">Buy From Cocoon to Soar</a>
       </div>
       <p style="margin-top:2rem;font-style:italic">More to come — "The Lord is constantly pouring content for you into my heart. Keep my obedience to His will in your prayers."</p>
       <div class="btn-row">

@@ -82,26 +82,45 @@ BODY = """
       <h2>Other Ministries We <span class="script" style="font-size:1.1em">Love</span></h2>
       <p>Sister ministries and partners walking alongside Favored by the Father Ministries.</p>
     </div>
-    <div class="grid-4">
-      <a class="card reveal" href="{LINKS[fb_firm]}" target="_blank" rel="noopener">
-        <h3 style="font-size:1.15rem">Firm Foundation Word of Truth</h3>
-        <p>A community grounded in the Word.</p>
-      </a>
-      <a class="card reveal" href="{LINKS[empowerment]}" target="_blank" rel="noopener">
-        <h3 style="font-size:1.15rem">Christ-Centered Empowerment</h3>
-        <p>Empowerment rooted in Christ.</p>
+    <a class="card reveal" href="{LINKS[planu]}" target="_blank" rel="noopener" style="border:2px solid var(--gold);margin-bottom:1.8rem;padding:2.4rem 2.2rem">
+      <div class="grid-2" style="align-items:center">
+        <div style="background:var(--ivory);border-radius:14px;padding:1.4rem;display:flex;align-items:center;justify-content:center">
+          <img src="{IMG[planu_logo]}" alt="PLAN U Inc. logo" style="max-height:200px;width:auto;max-width:100%" loading="lazy">
+        </div>
+        <div>
+          <span class="series-label">Featured Partner</span>
+          <h3 style="font-size:1.6rem">PLAN U Inc.</h3>
+          <p>A 501(c)(3) nonprofit in Portsmouth, Virginia, empowering justice-impacted individuals, displaced citizens, and underserved communities with holistic support and workforce readiness &mdash; disrupting cycles of recidivism and homelessness, one life at a time. <em>New PLAN, New YOU.</em></p>
+          <span class="btn btn-sm btn-gold" style="margin-top:0.5rem">Visit PLAN U Inc.</span>
+        </div>
+      </div>
+    </a>
+    <div class="grid-3">
+      <a class="card reveal" href="{LINKS[prayer]}" target="_blank" rel="noopener">
+        <div class="card-icon">{HEART_ICON}</div>
+        <h3 style="font-size:1.15rem">Community of Prayer Circle</h3>
+        <p>Sincere prayer is the purest way to converse with God. Open your heart, share your prayer request, and pray for others on our virtual wall. Join the circle every Tuesday &amp; Thursday at 7&nbsp;AM&nbsp;ET.</p>
       </a>
       <a class="card reveal" href="{LINKS[kingdom_women]}" target="_blank" rel="noopener">
+        <img src="{IMG[kingdom_logo]}" alt="Dr. Sharon Arrindell — KINGDOM Women" style="height:90px;width:auto;max-width:100%;object-fit:contain;margin-bottom:1rem" loading="lazy">
         <h3 style="font-size:1.15rem">KINGDOM Women</h3>
-        <p>With Dr. Sharon Arrindell.</p>
+        <p>Dr. Sharon Arrindell &mdash; international speaker, executive coach, and bestselling author &mdash; empowers women to reinvent themselves, lead with confidence, and build a legacy that outlives them.</p>
+      </a>
+      <a class="card reveal" href="{LINKS[empowerment]}" target="_blank" rel="noopener">
+        <img src="{IMG[empower_logo]}" alt="Coach B. Wright-Jones — Christ-Centered Empowerment" style="height:90px;width:auto;max-width:100%;object-fit:contain;margin-bottom:1rem" loading="lazy">
+        <h3 style="font-size:1.15rem">Christ-Centered Empowerment</h3>
+        <p>Coach B. Wright-Jones &mdash; author, speaker, and podcast host &mdash; serves Christian women 35 and older who know there is more for their lives. Be empowered to change!</p>
+      </a>
+      <a class="card reveal" href="{LINKS[fb_firm]}" target="_blank" rel="noopener">
+        <img src="{IMG[firm]}" alt="Firm Foundation Word of Truth logo" style="height:90px;width:auto;max-width:100%;object-fit:contain;margin-bottom:1rem" loading="lazy">
+        <h3 style="font-size:1.15rem">Firm Foundation Word of Truth</h3>
+        <p>A community grounded in the Word of Truth &mdash; sound biblical teaching, encouragement, and fellowship for everyday believers.</p>
       </a>
       <a class="card reveal" href="{LINKS[gg_united]}" target="_blank" rel="noopener">
+        <img src="{IMG[gg]}" alt="GG United by Love logo" style="height:90px;width:auto;max-width:100%;object-fit:contain;margin-bottom:1rem" loading="lazy">
         <h3 style="font-size:1.15rem">GG United by Love</h3>
-        <p>Grandmothers and their girls.</p>
+        <p>Grandmothers and their girls, united by love. When grandmothers rise, girls thrive &mdash; and the world changes, one girl at a time.</p>
       </a>
-    </div>
-    <div class="btn-row" style="justify-content:center;margin-top:2rem">
-      <a class="btn btn-outline-dark" href="{LINKS[planu]}" target="_blank" rel="noopener">Plan U Inc.</a>
     </div>
   </div>
 </section>

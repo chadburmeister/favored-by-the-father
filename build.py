@@ -42,6 +42,9 @@ IMG = {
     "elaines": f"{CDN}/08b376d1-d895-4b1e-9750-784ba117f36d/Elaines+Book+Signing+06-11+192153.png?format=700w",
     "charles": f"{CDN}/5bd416d5-766b-428f-95d4-4068a4ea73ea/CHARLES.jpg?format=700w",
     "masterclass2025": f"{CDN}/ff37d65f-c4c7-42c0-bbd8-ceead07f3f23/Mini+Masterclass+Cover.png?format=700w",
+    "planu_logo": "https://img1.wsimg.com/isteam/ip/9d8b9f73-7c57-46ec-8fbf-e57e0aedfbe7/PLAN%20U%20Inc%20Logo%202024.jpg",
+    "kingdom_logo": "https://static.wixstatic.com/media/f820a5_347dd982687c4a448ebf3b1ed833729f%7Emv2.png/v1/fit/w_800,h_426,al_c/f820a5_347dd982687c4a448ebf3b1ed833729f%7Emv2.png",
+    "empower_logo": "https://static.wixstatic.com/media/f1f053_9ea05515c6fd44368a3c350d821b5150%7Emv2.jpg/v1/fit/w_800,h_426,al_c/f1f053_9ea05515c6fd44368a3c350d821b5150%7Emv2.jpg",
 }
 
 LINKS = {
@@ -60,7 +63,7 @@ LINKS = {
     "appearances": "https://youtube.com/playlist?list=PLTpFdYsdDUf-nVrEWEOoKZEgC41K7X0ou",
     "eventbrite": "https://www.eventbrite.com/e/3rd-annual-fall-spiritual-retreat-tickets-1980435173917",
     "eventbrite_org": "https://www.eventbrite.com/o/85022479213",
-    "amazon_author": "https://www.amazon.com/s?k=Barbara+A.+F.+Brehon",
+    "amazon_author": "https://www.amazon.com/stores/Barbara-A.-F.-Brehon/author/B0CHBQ1TCS",
     "b_smiles": "https://www.amazon.com/Reach-SMILES-Developing-Disciples-Christlikeness/dp/B0DRZSFDQT",
     "b_beyond": "https://www.amazon.com/Beyond-Discipleship-Relationship-Developing-Intimacy/dp/1963565096",
     "b_blooming": "https://www.amazon.com/BLOOMING-CHRIST-Intimacy-Disciples-Christlikeness/dp/B0DRZTTJ33",
