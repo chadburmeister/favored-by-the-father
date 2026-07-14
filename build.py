@@ -43,6 +43,12 @@ IMG = {
     "charles": f"{CDN}/5bd416d5-766b-428f-95d4-4068a4ea73ea/CHARLES.jpg?format=700w",
     "masterclass2025": f"{CDN}/ff37d65f-c4c7-42c0-bbd8-ceead07f3f23/Mini+Masterclass+Cover.png?format=700w",
     "prayer_logo": "/CommunityOfPrayerCircle.webp",
+    "music_singles": "/MusicSinglesCollection.jpg",
+    "app_icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/71/0f/45/710f45c1-606a-96b1-f5de-93b38626e74d/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x460bb.webp",
+    "b_home_cover": "https://m.media-amazon.com/images/I/41tiWU2T1kL._SY500_.jpg",
+    "b_home_comp_cover": "https://m.media-amazon.com/images/I/41b38+jhoRL._SY500_.jpg",
+    "b_ella_cover": "https://m.media-amazon.com/images/I/31gOZtUjn6L._SY500_.jpg",
+    "b_points3_cover": "https://m.media-amazon.com/images/I/41-3BRbZSHL._SY500_.jpg",
     "planu_logo": "https://img1.wsimg.com/isteam/ip/9d8b9f73-7c57-46ec-8fbf-e57e0aedfbe7/PLAN%20U%20Inc%20Logo%202024.jpg",
     "kingdom_logo": "https://static.wixstatic.com/media/f820a5_347dd982687c4a448ebf3b1ed833729f%7Emv2.png/v1/fit/w_800,h_426,al_c/f820a5_347dd982687c4a448ebf3b1ed833729f%7Emv2.png",
     "empower_logo": "https://static.wixstatic.com/media/f1f053_9ea05515c6fd44368a3c350d821b5150%7Emv2.jpg/v1/fit/w_800,h_426,al_c/f1f053_9ea05515c6fd44368a3c350d821b5150%7Emv2.jpg",
@@ -172,15 +178,19 @@ BOOKS_SCHEMA = {
     "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "item": bk}
         for i, bk in enumerate([
-            _book("Reach Me with SMILES: A Handbook for Developing Disciple Makers", LINKS["b_smiles"], IMG["smiles"], "A practical guide to cultivating intentional, relational, and spiritually mature disciple makers using the SMILES model."),
-            _book("Beyond Discipleship to Relationship: Developing Intimacy with the Lord", LINKS["b_beyond"], IMG["beyond"], "An invitation to move past surface-level discipleship into deep, Christ-centered relationship."),
-            _book("Blooming for Christ: Growing Godly Intimacy", LINKS["b_blooming"], IMG["blooming"], "A nurturing exploration of spiritual growth and intimacy with God."),
-            _book("Points to Ponder: Daily Devotionals and Journaling", LINKS["b_points1"], IMG["points1"], "Daily devotionals and journaling prompts to nurture spiritual growth."),
-            _book("Points to Ponder: Daily Devotionals and Journaling, Volume 2", LINKS["b_points2"], IMG["points2"], "Fresh devotionals and prompts that deepen personal connection with the Lord."),
-            _book("Perspectives: What Singles Really Want from Ministry and Life", LINKS["b_persp_singles"], IMG["persp_singles"], "Honest insight for ministries that long to serve singles well."),
-            _book("100 UNBOXED Perspectives", LINKS["b_unboxed100"], IMG["unboxed100"], "The first 100 episodes of the UNBOXED on Purpose Podcast with cover art and episode summaries."),
+            _book("Start at Home: Family Discipleship from the House of Jesus", LINKS["amazon_author"], IMG["b_home_cover"], "Family discipleship modeled on the house of Jesus — bringing discipleship home, where faith is first formed."),
+            _book("Start at Home Companion: The Family Discipleship Discussion Guide", LINKS["amazon_author"], IMG["b_home_comp_cover"], "The companion discussion guide to Start at Home — for families, small groups, and ministry leaders."),
+            _book("Ella's Perspectives: Navigating Life's Ups and Downs", LINKS["amazon_author"], IMG["b_ella_cover"], "Honest, faith-filled perspective for navigating life's ups and downs."),
+            _book("Points to Ponder: Devotional Readings and Journaling, Volume 3", LINKS["amazon_author"], IMG["b_points3_cover"], "The devotional journey continues — fresh readings and journaling prompts, one morning at a time."),
             _book("Perspectives on Church Hurt", LINKS["b_church_hurt"], IMG["church_hurt"], "A compassionate, scripture-centered framework for healing from church hurt, grounded in a nationwide survey."),
             _book("Mending the Masterpiece: Discussion Workbook", LINKS["b_mending"], IMG["mending"], "The hands-on companion workbook to Perspectives on Church Hurt."),
+            _book("100 UNBOXED Perspectives", LINKS["b_unboxed100"], IMG["unboxed100"], "The first 100 episodes of the UNBOXED on Purpose Podcast with cover art and episode summaries."),
+            _book("Perspectives: What Singles Really Want from Ministry and Life", LINKS["b_persp_singles"], IMG["persp_singles"], "Honest insight for ministries that long to serve singles well."),
+            _book("Points to Ponder: Daily Devotionals and Journaling, Volume 2", LINKS["b_points2"], IMG["points2"], "Fresh devotionals and prompts that deepen personal connection with the Lord."),
+            _book("Reach Me with SMILES: A Handbook for Developing Disciple Makers", LINKS["b_smiles"], IMG["smiles"], "A practical guide to cultivating intentional, relational, and spiritually mature disciple makers using the SMILES model."),
+            _book("Blooming for Christ: Growing Godly Intimacy, Second Edition", LINKS["b_blooming"], IMG["blooming"], "A nurturing exploration of spiritual growth and intimacy with God."),
+            _book("Beyond Discipleship to Relationship: Developing Intimacy with the Lord", LINKS["b_beyond"], IMG["beyond"], "An invitation to move past surface-level discipleship into deep, Christ-centered relationship."),
+            _book("Points to Ponder: Daily Devotionals and Journaling", LINKS["b_points1"], IMG["points1"], "Daily devotionals and journaling prompts to nurture spiritual growth."),
             _book("From Cocoon to Soar", LINKS["b_cocoon"], IMG["cocoon"], "Anthology co-authored with 18 leaders, featuring chapters on emerging from darkness and the power of self-discovery."),
         ])
     ],
@@ -441,6 +451,6 @@ page(filename="contact.html", canonical="/contact",
      body=contact_body.format(**ctx))
 
 # Copy static assets into the output directory
-for static in ("styles.css", "main.js", "404.html", "robots.txt", "sitemap.xml", "PastorBrehon.jpeg", "CommunityOfPrayerCircle.webp"):
+for static in ("styles.css", "main.js", "404.html", "robots.txt", "sitemap.xml", "PastorBrehon.jpeg", "CommunityOfPrayerCircle.webp", "MusicSinglesCollection.jpg"):
     shutil.copy(ROOT / static, OUT / static)
 print("done — output in public/")

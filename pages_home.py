@@ -29,7 +29,9 @@ BODY = """
     </div>
     <div class="grid-3">
       <article class="card reveal">
-        <div class="card-icon">{PHONE_ICON}</div>
+        <div style="height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;background:linear-gradient(135deg,var(--lavender-soft),rgba(201,182,228,0.3));border-radius:12px">
+          <img src="{IMG[app_icon]}" alt="Favored by the Father app icon" style="height:110px;width:110px;border-radius:24px;box-shadow:var(--shadow-md)" loading="lazy">
+        </div>
         <h3>Digital Discipleship App</h3>
         <p>A free download designed to connect, engage, and help you grow from wherever you are — daily devotionals, prayer requests, Bible study, multiple Bible versions, and more.</p>
         <div class="card-links">
@@ -38,7 +40,12 @@ BODY = """
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-icon">{BOOK_ICON}</div>
+        <div style="display:flex;gap:0.5rem;margin-bottom:1.2rem;height:150px;border-radius:12px;overflow:hidden">
+          <img src="{IMG[b_home_cover]}" alt="Start at Home book cover" style="flex:1;min-width:0;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+          <img src="{IMG[b_ella_cover]}" alt="Ella's Perspectives book cover" style="flex:1;min-width:0;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+          <img src="{IMG[b_points3_cover]}" alt="Points to Ponder Volume 3 cover" style="flex:1;min-width:0;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+          <img src="{IMG[church_hurt]}" alt="Perspectives on Church Hurt cover" style="flex:1;min-width:0;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+        </div>
         <h3>Books &amp; Resources</h3>
         <p>Bestselling books, devotionals, and workbooks — plus ministry consultants available for mini masterclasses, book talks, preaching, teaching, seminars, webinars, and podcasts.</p>
         <div class="card-links">
@@ -47,7 +54,9 @@ BODY = """
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-icon">{MUSIC_ICON}</div>
+        <div style="border-radius:12px;overflow:hidden;margin-bottom:1.2rem;height:150px">
+          <img src="{IMG[music_singles]}" alt="Favored by the Father Singles Collection — songs born in prayer, teaching, and revelation" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+        </div>
         <h3>Music Inspired by Ministry</h3>
         <p>Experience the journey from page to melody. <em>Here, in the Becoming</em> — a landmark album inspired by Dr. Brehon's books — guides, comforts, and inspires through life's seasons.</p>
         <div class="card-links">
@@ -55,7 +64,9 @@ BODY = """
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-icon">{MIC_ICON}</div>
+        <div style="border-radius:12px;overflow:hidden;margin-bottom:1.2rem;height:150px">
+          <img src="{IMG[season5]}" alt="UNBOXED on Purpose Podcast — Season 5" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+        </div>
         <h3>UNBOXED on Purpose Podcast</h3>
         <p>Real, unfiltered conversations that inspire deeper faith, self-discovery, and the courage to walk boldly in your God-gifted purpose.</p>
         <div class="card-links">
@@ -64,7 +75,9 @@ BODY = """
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-icon">{DOVE_ICON}</div>
+        <div style="border-radius:12px;overflow:hidden;margin-bottom:1.2rem;height:150px">
+          <img src="{IMG[brookside]}" alt="Brookside — A Sacred Haven" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+        </div>
         <h3>Mentoring &amp; Sacred Spaces</h3>
         <p>Brookside virtual mentoring and Haven for Ravens — safe, confidential spaces where those who feed others can breathe and be nurtured themselves.</p>
         <div class="card-links">
@@ -72,7 +85,9 @@ BODY = """
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-icon">{HEART_ICON}</div>
+        <div style="height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;background:var(--ivory-warm);border-radius:12px">
+          <img src="{IMG[prayer_logo]}" alt="Community of Prayer Circle logo" style="height:120px;width:120px;object-fit:contain" loading="lazy">
+        </div>
         <h3>Community of Prayer</h3>
         <p>Sincere prayer is the purest way to converse with God. Open your heart, share your prayer request, and pray for others on our virtual wall.</p>
         <div class="card-links">
