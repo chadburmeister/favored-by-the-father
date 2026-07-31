@@ -9,7 +9,7 @@ BODY = """
       <div class="btn-row">
         <a class="btn btn-gold" href="#devotional">Get the Free Daily Devotional</a>
         <a class="btn btn-outline" href="{LINKS[podcast_playlist]}" target="_blank" rel="noopener">Listen to the Podcast</a>
-        <a class="btn btn-outline" href="/events#bible-institute">Bible Institute</a>
+        <a class="btn btn-outline" href="/events#bible-institute">Institute</a>
       </div>
       <p class="hero-verse">"Grow in the grace and knowledge of our Lord and Savior Jesus Christ." <br><strong>— 2 Peter 3:18 NLT</strong></p>
     </div>
