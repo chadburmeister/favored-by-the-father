@@ -471,7 +471,7 @@ page(filename="mentoring.html", canonical="/mentoring",
      body=mentoring_body.format(**ctx))
 page(filename="events.html", canonical="/events",
      title="Christian Spiritual Retreat in Virginia for Pastors & Ministry Leaders — Nov 5–6, 2026 | Events",
-     description="A soul care retreat for pastors, caregivers, and ministry leaders: the 3rd Annual Fall Spiritual Retreat, November 5–6, 2026 at Williamsburg Christian Retreat Center in Toano, Virginia — plus the Mini Masterclass Series, Chat & Chew book talks, and the Bible Institute.",
+     description="A soul care retreat for pastors, caregivers, and ministry leaders: the 3rd Annual Fall Spiritual Retreat, November 5–6, 2026 at Williamsburg Christian Retreat Center in Toano, Virginia — plus the Mini Masterclass Series, Chat & Chew book talks, and the Institute.",
      body=events_body.format(**ctx), extra_schema=[EVENT_SCHEMA, FAQ_SCHEMA])
 page(filename="testimonials.html", canonical="/testimonials",
      title="Testimonials — Christian Mentoring & Retreat Stories | Favored by the Father Ministries",
