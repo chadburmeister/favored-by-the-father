@@ -1,0 +1,78 @@
+name: Migrate Squarespace images (one-time)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download and optimize images
+        run: |
+          pip install pillow
+          python3 - <<'EOF'
+          import io, os, urllib.request
+          from PIL import Image
+          CDN = "https://images.squarespace-cdn.com/content/v1/65faf99814900055181908ab"
+          IMAGES = {
+              "logo": "/5c16df6c-f5f4-43f4-be13-173ed06b6ec8/logo.png?format=300w",
+              "portrait": "/c40c6d1f-fc49-4ebd-afc0-bb3ebcc950c0/2026.02.01.jpg?format=1000w",
+              "hero_legacy": "/df7d89e0-4701-4433-a3b9-86415be84692/_Website+Homepage2e.png?format=1200w",
+              "butterfly": "/4ff37526-3877-42b2-b292-79487046e568/Butterfly.jpg?format=800w",
+              "music": "/0de7e1e1-362d-4af9-8e61-50af485c7f3d/Website+Music+Inspired+by+Ministry.png?format=800w",
+              "church_hurt_song": "/bd646411-806b-4c16-9f11-8415795c6736/New+Release+Church+Hurt+Thumbnail+Song+Cover.png?format=800w",
+              "brookside": "/ac03e005-4c8e-4d30-9d8f-5d4ed5b52c02/Brookside+A+Sacred+Haven.png?format=800w",
+              "season5": "/92e5384c-e355-49ba-99b0-60c827479a24/Season+5+Newsletter+Image+on+LinkedIn+%281%29.png?format=800w",
+              "smiles": "/03f96042-925c-4d85-b9f6-facc00ff4acd/SMILES+sail+at+sunset+2.2024-12-23.png?format=600w",
+              "beyond": "/5ba44923-9971-4267-9c2a-36c0949c6d68/Cover+Beyond+Discipleship.from+Amazon+Q.jpg?format=600w",
+              "blooming": "/ade487c7-930a-4874-b279-1f313c54e481/Cover+Soft+2026+Blooming.jpg?format=600w",
+              "points1": "/ec35cce0-a58f-40f5-8432-8772a6894883/Points+Softcover2024.2.jpg?format=600w",
+              "points2": "/e5b033d3-6ab6-4d0b-8f5f-9cb5151fea02/Points+Vol+2+Soft+Cover.jpg?format=600w",
+              "persp_singles": "/39e2daff-e731-4c66-acdd-6626857772eb/Perspectives+Singles+Cover+1.png?format=600w",
+              "unboxed100": "/03979347-e4a5-460c-a442-6604205e74af/100+Unboxed+Perspectives+Cover+eBook.png?format=600w",
+              "church_hurt": "/71be1868-edcc-412e-a397-4b46fbd76f31/Church+Hurt+Hard+cover+Amazon.jpg?format=600w",
+              "mending": "/92972f3a-1f4e-4250-b069-11f4bfb84522/Mending+the+Masterpiece+COVER+Amazon.jpg?format=600w",
+              "cocoon": "/fe38cab0-af55-4f5e-9abd-b84a3aec166b/COCOON+1.jpg?format=600w",
+              "retreat": "/2a67da61-d9e0-46ea-8bcc-3bedd9dd2af8/Fall+Spiritual+Retreat+3rd+Annual+2026.b.png?format=900w",
+              "masterclass": "/429d9797-3e23-4c31-bd5c-c30e91daf227/Mini+Masterclass+Series+Cover+2.png?format=800w",
+              "chatchew": "/3cafdf8f-75fe-4d8a-b6de-c3bec3296bfc/Chat+%26+Chew+Generic.png?format=800w",
+              "firm": "/36d2e96c-0eb7-47e7-a753-d7f34573102f/Firm+Foundation+Logo.png?format=400w",
+              "gg": "/986ded8d-7a0c-4aea-afba-d789bdec3ff5/GG+United+by+Love.png?format=400w",
+              "retreat2025": "/2b67ddd9-6334-4157-900b-a72b6271d409/2025+Retreat+Discount+2-4-1-Deal.png?format=700w",
+              "retreat2024": "/eec40e3c-9ebe-4729-9e98-842528e32861/1.jpg?format=700w",
+              "elaines": "/08b376d1-d895-4b1e-9750-784ba117f36d/Elaines+Book+Signing+06-11+192153.png?format=700w",
+              "charles": "/5bd416d5-766b-428f-95d4-4068a4ea73ea/CHARLES.jpg?format=700w",
+              "masterclass2025": "/ff37d65f-c4c7-42c0-bbd8-ceead07f3f23/Mini+Masterclass+Cover.png?format=700w",
+          }
+          os.makedirs("img", exist_ok=True)
+          MAX_DIM = 1200
+          total_in = total_out = 0
+          for key, path in IMAGES.items():
+              url = CDN + path
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              data = urllib.request.urlopen(req, timeout=60).read()
+              total_in += len(data)
+              im = Image.open(io.BytesIO(data))
+              if max(im.size) > MAX_DIM:
+                  im.thumbnail((MAX_DIM, MAX_DIM), Image.LANCZOS)
+              has_alpha = im.mode in ("RGBA", "LA", "P") and (im.mode != "P" or "transparency" in im.info)
+              im = im.convert("RGBA" if has_alpha else "RGB")
+              out = os.path.join("img", key + ".webp")
+              im.save(out, "WEBP", quality=82, method=6)
+              total_out += os.path.getsize(out)
+              print(f"{key}: {len(data)//1024}KB -> {os.path.getsize(out)//1024}KB {im.size}")
+          print(f"TOTAL: {total_in//1024}KB -> {total_out//1024}KB")
+          EOF
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add img/
+          git commit -m "Migrate Squarespace CDN images to repo (optimized WebP)"
+          git push
