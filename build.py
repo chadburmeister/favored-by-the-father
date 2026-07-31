@@ -341,7 +341,7 @@ def header(active: str) -> str:
 FOOTER = f"""<section class="footer-cta section-tight">
   <div class="container">
     <div class="divider-butterfly">{BUTTERFLY_SVG}</div>
-    <h2>Flutter freely out of confining dark boxes.<br><span class="script" style="font-size:1.2em">Be UNBOXED on purpose.</span></h2>
+    <h2>Flutter freely out of confining boxes.<br><span class="script" style="font-size:1.2em">Be UNBOXED on purpose.</span></h2>
     <div class="btn-row" style="justify-content:center">
       <a class="btn btn-gold" href="{LINKS['calendly_general']}" target="_blank" rel="noopener">Make an Appointment</a>
       <a class="btn btn-outline" href="{LINKS['donate']}" target="_blank" rel="noopener">Give &amp; Support</a>
