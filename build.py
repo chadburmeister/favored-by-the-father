@@ -341,7 +341,7 @@ def header(active: str) -> str:
 FOOTER = f"""<section class="footer-cta section-tight">
   <div class="container">
     <div class="divider-butterfly">{BUTTERFLY_SVG}</div>
-    <h2>Flutter freely out of confining boxes.<br><span class="script" style="font-size:1.2em">Be UNBOXED on purpose.</span></h2>
+    <h2>Flutter freely out of confining boxes.<br><span style="font-family:var(--font-display);font-style:italic;font-weight:600;font-size:1.05em;letter-spacing:0.01em;color:var(--gold)">Be UNBOXED on purpose.</span></h2>
     <div class="btn-row" style="justify-content:center">
       <a class="btn btn-gold" href="{LINKS['calendly_general']}" target="_blank" rel="noopener">Make an Appointment</a>
       <a class="btn btn-outline" href="{LINKS['donate']}" target="_blank" rel="noopener">Give &amp; Support</a>
@@ -496,6 +496,6 @@ page(filename="articles/sabbath-rest-for-ministry-leaders.html", canonical="/art
      body=article_sabbath_body.format(**ctx), extra_schema=ARTICLE_SABBATH_SCHEMA)
 
 # Copy static assets into the output directory
-for static in ("styles.css", "main.js", "404.html", "robots.txt", "sitemap.xml", "PastorBrehon.jpeg", "CommunityOfPrayerCircle.webp", "MusicSinglesCollection.jpg"):
+for static in ("styles.css", "main.js", "404.html", "robots.txt", "llms.txt", "sitemap.xml", "PastorBrehon.jpeg", "CommunityOfPrayerCircle.webp", "MusicSinglesCollection.jpg"):
     shutil.copy(ROOT / static, OUT / static)
 print("done — output in public/")
