@@ -38,6 +38,9 @@
       { threshold: 0.12 }
     );
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    setTimeout(function () {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(function (el) { el.classList.add('visible'); });
+    }, 2000);
   } else {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
   }

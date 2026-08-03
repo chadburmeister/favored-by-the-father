@@ -49,7 +49,7 @@ BODY = """
     <div class="section-head reveal">
       <span class="eyebrow">Foundational Resource Collections</span>
       <h2>Continue the journey <span class="script" style="font-size:1.1em">beyond</span> the session</h2>
-      <p>Every educational experience is supported by the foundational published resources of our founder, Rev. Dr. Barbara A. F. Brehon. Use these recommended books and companion discussion guides to continue your learning journey and application long after your sessions conclude.</p>
+      <p>Every educational experience is supported by the foundational published resources of our founder, Rev. Dr. Barbara A. F. Brehon. We encourage you to use these recommended books and companion discussion guides to continue your learning journey and application long after your sessions conclude.</p>
     </div>
     <div class="grid-3" style="margin-top:2rem">
       <div class="card reveal">
