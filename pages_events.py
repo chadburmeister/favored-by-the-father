@@ -128,7 +128,7 @@ BODY = """
       <p>Join Rev. Dr. Barbara A. F. Brehon for the Favored by the Father Institute &mdash; an immersive teaching series where she guides you through the spiritual insights and practical applications found in her published works. Secure your spot for this transformative, paid experience today by registering through our official Eventbrite page.</p>
       <div class="btn-row">
         <a class="btn btn-gold" href="{LINKS[eventbrite_org]}" target="_blank" rel="noopener">Register on Eventbrite</a>
-        <a class="btn btn-outline" href="/books">Explore the Books</a>
+        <a class="btn btn-outline" href="/institute">Learn More</a>
       </div>
     </article>
     <div class="grid-2">

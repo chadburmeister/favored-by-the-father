@@ -80,7 +80,7 @@ BODY = """
     <div class="section-head center reveal">
       <span class="eyebrow">Kingdom Partners</span>
       <h2>Other Ministries We <span class="script" style="font-size:1.1em">Love</span></h2>
-      <p>Sister ministries and partners walking alongside Favored by the Father Ministries.</p>
+      <p>Ministries and partners walking alongside Favored by the Father Ministries.</p>
     </div>
     <a class="card reveal" href="{LINKS[planu]}" target="_blank" rel="noopener" style="border:2px solid var(--gold);margin-bottom:1.8rem;padding:2.4rem 2.2rem">
       <div class="grid-2" style="align-items:center">

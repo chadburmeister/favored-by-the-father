@@ -53,7 +53,7 @@ BODY = """
       <article class="glass reveal">
         <h3>UNBOXED Theme Song</h3>
         <p>The official podcast anthem — crafted to connect the message of breaking free and walking in your God-given destiny directly to your heart.</p>
-        <a class="btn btn-sm btn-gold" href="{LINKS[podcast_playlist]}" target="_blank" rel="noopener">Hear the Anthem</a>
+        <a class="btn btn-sm btn-gold" href="{LINKS[anthem]}" target="_blank" rel="noopener">Hear the Anthem</a>
       </article>
     </div>
   </div>
@@ -63,7 +63,7 @@ BODY = """
 <section>
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow">Podcast History</span>
+      <span class="eyebrow">Book Series on Amazon</span>
       <h2>Three Powerful Series</h2>
       <p>Scripture-centered reflections, guided readings, and formation tools for personal devotion, group engagement, and leadership development.</p>
     </div>
@@ -71,14 +71,17 @@ BODY = """
       <article class="card reveal">
         <h3 style="font-size:1.25rem">Disciple's Journey to Christlikeness</h3>
         <p>Cultivating intentional, relational, spiritually mature disciple makers.</p>
+        <a href="{LINKS[amazon_author]}" target="_blank" rel="noopener" style="color:var(--gold-soft);font-size:0.9rem">Shop the series on Amazon →</a>
       </article>
       <article class="card reveal">
         <h3 style="font-size:1.25rem">Rev BB's Morning Messages</h3>
         <p>Daily nurture for spiritual and ministry development, from the heart outward.</p>
+        <a href="{LINKS[amazon_author]}" target="_blank" rel="noopener" style="color:var(--gold-soft);font-size:0.9rem">Shop the series on Amazon →</a>
       </article>
       <article class="card reveal">
         <h3 style="font-size:1.25rem">Perspectives</h3>
         <p>Honest voices on ministry and life — because listening precedes ministering.</p>
+        <a href="{LINKS[amazon_author]}" target="_blank" rel="noopener" style="color:var(--gold-soft);font-size:0.9rem">Shop the series on Amazon →</a>
       </article>
     </div>
   </div>

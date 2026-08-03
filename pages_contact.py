@@ -15,7 +15,7 @@ BODY = """
         <h3 style="font-size:1.25rem">Email the Ministry</h3>
         <p>The fastest way to reach Rev. Dr. Brehon for questions, media, speaking, and everything else.</p>
         <div class="card-links">
-          <a class="btn btn-sm btn-gold" href="mailto:barbara@favoredbythefather.com">barbara@favoredbythefather.com</a>
+          <a class="btn btn-sm btn-gold" href="mailto:info@favoredbythefather.com">info@favoredbythefather.com</a>
         </div>
       </article>
       <article class="card reveal">

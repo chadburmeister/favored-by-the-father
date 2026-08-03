@@ -42,6 +42,7 @@ IMG = {
     "elaines": "/img/elaines.webp",
     "charles": "/img/charles.webp",
     "masterclass2025": "/img/masterclass2025.webp",
+    "institute": "/img/institute.webp",
     "prayer_logo": "/CommunityOfPrayerCircle.webp",
     "music_singles": "/MusicSinglesCollection.jpg",
     "app_icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/71/0f/45/710f45c1-606a-96b1-f5de-93b38626e74d/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x460bb.webp",
@@ -55,7 +56,7 @@ IMG = {
 }
 
 LINKS = {
-    "email": "mailto:barbara@favoredbythefather.com",
+    "email": "mailto:info@favoredbythefather.com",
     "donate": "https://buy.stripe.com/bIYcP60yOdzae4MdQT",
     "prayer": "https://pastorpurpose.com/",
     "calendly_general": "https://calendly.com/unboxedfavor/book-time-with-me",
@@ -70,6 +71,7 @@ LINKS = {
     "appearances": "https://youtube.com/playlist?list=PLTpFdYsdDUf-nVrEWEOoKZEgC41K7X0ou",
     "eventbrite": "https://www.eventbrite.com/e/3rd-annual-fall-spiritual-retreat-tickets-1980435173917",
     "eventbrite_org": "https://www.eventbrite.com/o/85022479213",
+    "anthem": "https://youtu.be/p0wp0rOUGj4",
     "amazon_author": "https://www.amazon.com/stores/Barbara-A.-F.-Brehon/author/B0CHBQ1TCS",
     "b_smiles": "https://www.amazon.com/Reach-SMILES-Developing-Disciples-Christlikeness/dp/B0DRZSFDQT",
     "b_beyond": "https://www.amazon.com/Beyond-Discipleship-Relationship-Developing-Intimacy/dp/1963565096",
@@ -135,7 +137,7 @@ ORGANIZATION = {
     "logo": IMG["logo"],
     "image": f"{SITE}/PastorBrehon.jpeg",
     "description": "A church without walls founded in 2003 in Chesapeake, Virginia — nurturing souls and empowering individuals to grow in grace through digital discipleship, mentoring, books, music, and the UNBOXED on Purpose podcast.",
-    "email": "barbara@favoredbythefather.com",
+    "email": "info@favoredbythefather.com",
     "foundingDate": "2003-01",
     "founder": {"@id": f"{SITE}/#barbara-brehon"},
     "address": {
@@ -247,7 +249,7 @@ FAQ_SCHEMA = {
             ("Can mentors and mentees attend together?",
              "Yes — mentor and mentee teams are warmly welcomed."),
             ("What is the refund policy?",
-             "Tickets are non-refundable. Questions may be emailed to barbara@favoredbythefather.com."),
+             "Tickets are non-refundable. Questions may be emailed to info@favoredbythefather.com."),
         ]
     ],
 }
@@ -329,6 +331,7 @@ def header(active: str) -> str:
       <a href="/books">Books</a>
       <a href="/podcast">Podcast &amp; Music</a>
       <a href="/mentoring">Mentoring</a>
+      <a href="/institute">Institute</a>
       <a href="/events">Events</a>
       <a href="/articles">Articles</a>
       <a href="/testimonials">Testimonials</a>
@@ -354,13 +357,14 @@ FOOTER = f"""<section class="footer-cta section-tight">
       <div class="footer-brand">
         <h4>Favored by the Father Ministries</h4>
         <p>A church without walls since 2003 — nurturing souls and empowering individuals to grow in grace through digital discipleship and fellowship. Chesapeake, Virginia.</p>
-        <p><a href="{LINKS['email']}">barbara@favoredbythefather.com</a></p>
+        <p><a href="{LINKS['email']}">info@favoredbythefather.com</a></p>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="/about">About &amp; Beliefs</a>
         <a href="/books">Books by Dr.&nbsp;Brehon</a>
         <a href="/#devotional">Free 7-Day Devotional</a>
+        <a href="/institute">The Institute</a>
         <a href="/articles">Articles</a>
         <a href="/podcast">UNBOXED Podcast</a>
         <a href="/mentoring">Mentoring &amp; Brookside</a>
@@ -439,6 +443,7 @@ from pages_books import BODY as books_body
 from pages_podcast import BODY as podcast_body
 from pages_mentoring import BODY as mentoring_body
 from pages_events import BODY as events_body
+from pages_institute import BODY as institute_body
 from pages_testimonials import BODY as testimonials_body
 from pages_contact import BODY as contact_body
 from pages_articles import BODY as articles_body
@@ -482,6 +487,10 @@ page(filename="contact.html", canonical="/contact",
      description="Contact Rev. Dr. Barbara A. F. Brehon: book a speaking engagement, mentoring session, or podcast appearance, share a prayer request, download the free ministry app, or give to support the ministry.",
      body=contact_body.format(**ctx))
 
+page(filename="institute.html", canonical="/institute",
+     title="The Favored by the Father Institute | Transformation Masterclasses & Discipleship Resources",
+     description="The Journey of Becoming — growing disciples, developing leaders, transforming lives. Interactive Transformation Masterclasses, foundational book series, and a unified discipleship ecosystem from Rev. Dr. Barbara A. F. Brehon.",
+     body=institute_body.format(**ctx))
 page(filename="articles.html", canonical="/articles",
      title="Articles on Soul Care, Discipleship & Ministry Renewal | Favored by the Father Ministries",
      description="Scripture-centered articles from Rev. Dr. Barbara A. F. Brehon on pastor burnout, soul care, sabbath rest, discipleship, and spiritual growth for pastors and ministry leaders.",
